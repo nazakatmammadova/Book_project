@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="book.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>SKY Book</title>
+</head>
+<body>
+    <div class="daire"></div>
+    <header>
+        <nav>
+            <img src="logo.png">
+           <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#sekiller">Portfolio</a></li>
+               <li><a href="#contact">Contact</a></li>
+               <li><a href="./cataloq/cataloq.html">Catalog</a></li>
+           </ul> 
+           <div class="icons">
+            <i onclick="menu()" id="menu" class="fa-solid fa-bars"></i>
+            <i class="fas fa-user-circle"></i>
+            <i id="btnbasket" class="fab fa-shopify">(<span>0</span>)</i>
+           </div>
+           <div class="menu">
+            <span><i onclick="sil()" class="far fa-times-circle"></i></span>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#sekiller">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="/NEW SITE/cataloq/cataloq.html">Catalog</a></li>
+            </ul>
+           </div>
+        </nav>
+        <section id="basket">
+          <div class="content1">
+              <div class="modal1">
+                  <div class="modal-bas1">
+                      <h2>Basket</h2>
+                      <span><i class="far fa-times-circle"></i></span>
+                  </div>
+                  <div class="modal-body1">
+                      <table>
+                          <thead>
+                              <tr>
+                                  <th>Image</th>
+                                  <th>Product</th>
+                                  <th>Quantity</th>
+                                  <th>Price</th>
+                                  <th>Remove</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                                <!-- <tr>
+                                  <td><img src="book20.jpg"></td>
+                                  <td>Book</td>
+                                  <td ><p><span class="btn" onclick="azalt()"><i class="fas fa-minus-circle"></i></span>1<span class="btn" onclick="artir()"><i class="fas fa-plus-circle"></i></span></p></td>
+                                  <td><span>3</span> $</td>
+                                  <td onclick="removerow()"><span class="dlt"><i class="far fa-times-circle"></i></span></td>
+                                </tr>
+                                <tr>
+                                  <td><img src="book20.jpg"></td>
+                                  <td>Book</td>
+                                  <td ><p><span class="btn" onclick="azalt()"><i class="fas fa-minus-circle"></i></span>1<span class="btn" onclick="artir()"><i class="fas fa-plus-circle"></i></span></p></td>
+                                  <td><span>3</span> $</td>
+                                  <td onclick="removerow()"><span class="dlt"><i class="far fa-times-circle"></i></span></td>
+                                </tr> -->
+                          </tbody>
+                      </table>
+                      <p class="cem">Total: <span id="totalprice"></span></p>
+                  </div>
+              </div>
+          </div>
+      </section>
+      </header>
+      <section id="slides">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="sozler1">
+                        <h2>Welcome to <br> <span>Sky</span> Book</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Quisquam officia cum recusandae ea doloribus <br> consequatur accusantium nam deleniti</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Officia, neque dolorum minima cupiditate incidunt suscipit. <br> Excepturi facereiure totam soluta veritatis cupiditate minima a.</p>
+                    </div>
+                    <img src="slide1.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <div class="sozler2">
+                        <h2>Welcome to <br> <span>Sky</span> Book</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Quisquam officia cum recusandae ea doloribus <br> consequatur accusantium nam deleniti</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Officia, neque dolorum minima cupiditate incidunt suscipit. <br> Excepturi facereiure totam soluta veritatis cupiditate minima a.</p>
+                    </div>
+                    <img src="slide2.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <div class="sozler3">
+                        <h2>Welcome to <br> <span>Sky</span> Book</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Quisquam officia cum recusandae ea doloribus <br> consequatur accusantium nam deleniti</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Officia, neque dolorum minima cupiditate incidunt suscipit. <br> Excepturi facereiure totam soluta veritatis cupiditate minima a.</p>
+                    </div>
+                    <img src="slide3.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+    </section>   
+    <section id="about">
+        <div class="basliq">
+            <h2>AUTHOR BEST SELLING</h2>
+        </div>
+        <div class="esas">
+            <div class="yazar">
+                <img src="https://wpbingosite.com/wordpress/bookio/wp-content/webp-express/webp-images/uploads/2021/08/img8-2.jpg.webp">
+                <div class="yazi">
+                    <h1>J.K. <br> Rowling</h1>
+                    <p>Vestibulum porttitor iaculis gravida. Praesent vestibulum varius placerat. Cras tempor congue neque, id aliquam orci finibus sit amet. <br> Fusce at facilisis arcu. Donec aliquet nulla id turpis semper, a bibendum metus vulputate. <br> Suspendisse potenti. </p>
+                </div>
+            </div>
+            <div class="kitaplar">
+                <div class="kitap">
+                    <img src="hp3.jpg">
+                    <h4>Harry Potter 4</h4>
+                    <p>Goblet of Fire </p>
+                </div>
+                <div class="kitap">
+                    <img src="hp1.jpg">
+                    <h4>Harry Potter 5</h4>
+                    <p>Order of the Phoenix</p>
+                </div>
+                <div class="kitap">
+                    <img src="hp2.jpg">
+                    <h4>Harry Potter 2</h4>
+                    <p>Chamber of Secrets</p>
+                </div>
+                <div class="kitap">
+                    <img src="hp4.jpg">
+                    <h4>Harry Potter 6</h4>
+                    <p>Half-Blood Prince</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sekiller">
+        <h2>TOP INTERESTING BOOKS</h2>
+        <div class="books">
+          
+        </div>
+    </section>
+    <section class="reqemler-umumi">
+        <div class="reqem-umumi"> 
+            <div class="reqem">
+                <h4>Authors</h4>
+                <p class="yazicisayi">0</p>
+            </div>
+            <div class="reqem">
+               <h4>Total Books</h4>
+               <p class="toplam">0</p> 
+            </div>
+            <div class="reqem">
+               <h4>Book sold</h4>
+               <p class="satilan">0</p>
+            </div>
+        </div>
+    </section>
+    <div class="div1"><h2>Gallery</h2></div>
+    <section id="qaleriya">
+        <div class="boxx">
+          <span style="--i:1;"><img src="i10.jpg"></span>
+          <span style="--i:2;"><img src="i11.jpg"></span>
+          <span style="--i:3;"><img src="i6.jpg"></span>
+          <span style="--i:4;"><img src="i4.jpg"></span>
+          <span style="--i:5;"><img src="i12.jpg"></span>
+          <span style="--i:6;"><img src="i14.jpg"></span>
+          <span style="--i:7;"><img src="i7.jpg"></span>
+          <span style="--i:8;"><img src="i13.jpg"></span>
+      </section>
+      <section id="contact" class="b-s">
+        <h1>Contact Us</h1>
+    </section>  
+    <section class="melumat">
+        <div class="melumatlar">
+            <h1>Tell Us Your Message</h1>
+            <div class="inputlar">
+                <p>Your Name</p>
+                <input type="text" placeholder="Full Name">
+                <p>Your Email</p>
+                <input type="text" placeholder="Email Address">
+                <p>Subject</p>
+                <input type="text" placeholder="Subject">
+                <p>Your Messagge</p>
+                <input type="text" placeholder="Messagge">
+            </div>
+            <button>SEND MESSAGGE</button>
+        </div>
+        <div class="elaveler">
+            <div class="elave">
+                <h1>Contact Us</h1>
+                <p>Lorem ipsum dolor voluptatem labore nihil delectus, unde laboriosam. Repellat modi qui ad optio suscipit omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatibus tenetur qui nisi animi, pariatur dolore blanditiis est, ullam facere non saepe id fugit temporibus. Laborum perspiciatis quae minima magnam.</p>
+                <div class="adrs">
+                    <h4>
+                        <i class="fa fa-fax"></i>Address
+                    </h4>
+                    <p>123 Main Street, Anytown, CA 12345 - USA</p>
+                </div>
+                <div class="tel">
+                    <h4>
+                        <i class="fa fa-phone"></i>Phone
+                    </h4>
+                    <p>Mobile: (08) 123 456 789</p>
+                    <p>Hotline: 1009 678 456</p>
+                </div>
+                <div class="mktb">
+                    <h4>
+                        <i class="far fa-envelope"></i>Email
+                    </h4>
+                    <p>yourmail@domain.com </p>
+                    <p>support@hastech.company</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="adress">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.8506112561163!2d-118.25180054899718!3d34.04770298051205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c64a227f82ed%3A0x8591a1380838a935!2sThe%20Last%20Bookstore!5e0!3m2!1str!2s!4v1642716496589!5m2!1str!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </section>
+      <section class="son">
+        <div>
+            <img src="logo.png">
+            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
+            <p>Address : No. 96, Jecica City, NJ 07305, New York, USA</p>
+            <p>Phone : +1 222 3333 578</p>
+            <p>Email : support@example.com</p>
+        </div>
+        <div>
+            <h3>Business Hours</h3>
+            <p>Mon - Fri: 8AM - 10PM</p>
+            <p>Sat: 9AM-8PM</p>
+            <p>Sun: Closed</p>
+        </div>
+        <div>
+            <h3>Footer Menu</h3>
+            <p>Home</p>
+            <p>About</p>
+            <p>Portfolio</p>
+            <p>Contact</p>
+            <p>Catalog</p>
+        </div>
+    </section>
+    <footer>
+        <div>
+            Copyright & Copy © 2022 <span>Sky</span>Book All Rights Reserved.
+        </div>
+        <div>
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
+        <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp-square"></i></a>
+        </div>
+    </footer>
+      
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="book.js"></script>
+</body>
+</html>
