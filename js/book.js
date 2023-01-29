@@ -16,73 +16,73 @@ document.addEventListener('mousemove', function(e){
 let books=[
     {
         id:1,
-        img:"book1.jpg",
+        img:"./img/book1.jpg",
         price:'20.00',
         name:"A Curse so Dark and Lonely"
     },
     {
         id:2,
-        img:"book17.jpg",
+        img:"./img/book17.jpg",
         price:'37.00',
         name:"Ride the Wind"
     },
     {
         id:3,
-        img:"book18.jpg",
+        img:"./img/book18.jpg",
         price:'49.00',
         name:"Flame's Fury"
     },
     {
         id:4,
-        img:"book19.jpg",
+        img:"./img/book19.jpg",
         price:'54.00',
         name:"The Crimson Birds"
     },
     {
         id:5,
-        img:"book5.jpg",
+        img:"./img/book5.jpg",
         price:'55.00',
         name:"A Flicker in the Dark"
     },
     {
         id:6,
-        img:"book20.jpg",
+        img:"./img/book20.jpg",
         price:'58.00',
         name:"The Elemental Mage"
     },
     {
         id:7,
-        img:"book14.jpg",
+        img:"./img/book14.jpg",
         price:'55.00',
         name:"The Kite Runner"
     },
     {
         id:8,
-        img:"book21.jpg",
+        img:"./img/book21.jpg",
         price:'74.00',
         name:"The Hall of Shadows"
     },
     {
         id:9,
-        img:"book29.jpg",
+        img:"./img/book29.jpg",
         price:'37.00',
         name:"Wnierspeil"
     },
     {
         id:10,
-        img:"book10.jpg",
+        img:"./img/book10.jpg",
         price:'29.00',
         name:"The 1619 Project"
     },
     {
         id:11,
-        img:"book22.jpg",
+        img:"./img/book22.jpg",
         price:'35.00',
         name:"Relgn of Blood"
     },
     {
         id:12,
-        img:"book12.webp",
+        img:"./img/book12.webp",
         price:'39.00',
         name:"We Hunt the Flame"
     },

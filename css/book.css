@@ -305,7 +305,7 @@ nav .icons span{
     width: 100%;
     height: 320px;
     padding-top: 100px;
-    background: rgba(0,0,0,0.8) url(reqem.png);
+    background: rgba(0,0,0,0.8) url(/img/reqem.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -471,7 +471,7 @@ nav .icons span{
 }
 /*melumat*/
 .b-s{
-    background:#f6f6f6 url(cnt.jpg);
+    background:#f6f6f6 url(/img/cnt.jpg);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
