@@ -1,273 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./css/book.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>SKY Book</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sky Book — an online bookstore with bestsellers, classics, fantasy, mystery and horror books.">
+  <title>Sky Book — Online Bookstore</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
+  <meta name="theme-color" content="#e5642f">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/layout.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
 </head>
 <body>
-    <div class="daire"></div>
-    <header>
-        <nav>
-            <img src="./img/logo.png">
-           <ul>
-               <li><a href="#">Home</a></li>
-               <li><a href="#about">About</a></li>
-               <li><a href="#sekiller">Portfolio</a></li>
-               <li><a href="#contact">Contact</a></li>
-               <li><a href="cataloq.html">Catalog</a></li>
-           </ul> 
-           <div class="icons">
-            <i onclick="menu()" id="menu" class="fa-solid fa-bars"></i>
-            <i class="fas fa-user-circle"></i>
-            <i id="btnbasket" class="fab fa-shopify">(<span>0</span>)</i>
-           </div>
-           <div class="menu">
-            <span><i onclick="sil()" class="far fa-times-circle"></i></span>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#sekiller">Portfolio</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="cataloq.html">Catalog</a></li>
-            </ul>
-           </div>
-        </nav>
-        <section id="basket">
-          <div class="content1">
-              <div class="modal1">
-                  <div class="modal-bas1">
-                      <h2>Basket</h2>
-                      <span><i class="far fa-times-circle"></i></span>
-                  </div>
-                  <div class="modal-body1">
-                      <table>
-                          <thead>
-                              <tr>
-                                  <th>Image</th>
-                                  <th>Product</th>
-                                  <th>Quantity</th>
-                                  <th>Price</th>
-                                  <th>Remove</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                               
-                          </tbody>
-                      </table>
-                      <p class="cem">Total: <span id="totalprice"></span></p>
-                  </div>
-              </div>
+
+  <!-- ========== Header ========== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo" aria-label="Sky Book home">
+        <img class="logo__mark" src="assets/images/brand/logo-mark.svg" alt="" width="44" height="44">
+        <span class="logo__text"><span>Sky</span>Book</span>
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Main">
+        <button class="icon-btn nav__close" type="button" data-menu-close aria-label="Close menu">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <ul class="nav__list">
+          <li><a class="nav__link is-active" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#books">Portfolio</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+          <li><a class="nav__link" href="catalog.html">Catalog</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn" href="#contact" aria-label="Account">
+          <i class="fa-regular fa-circle-user" aria-hidden="true"></i>
+        </a>
+        <button class="icon-btn" type="button" data-cart-open aria-label="Open cart">
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="icon-btn menu-toggle" type="button" data-menu-open aria-label="Open menu" aria-controls="main-nav" aria-expanded="false">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== Hero ========== -->
+    <section class="hero" id="home" aria-roledescription="carousel" aria-label="Highlights">
+      <div class="hero__slide hero__slide--center">
+        <img src="assets/images/hero/slide-1.jpg" alt="">
+        <div class="container">
+          <div class="hero__content">
+            <h1 class="hero__title">Welcome to <span>Sky</span> Book</h1>
+            <p class="hero__text">Discover stories that stay with you — from timeless classics to this season's bestsellers.</p>
+            <a class="btn btn--primary" href="catalog.html">Browse catalog</a>
           </div>
-      </section>
-      </header>
-      <section id="slides">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="sozler1">
-                        <h2>Welcome to <br> <span>Sky</span> Book</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Quisquam officia cum recusandae ea doloribus <br> consequatur accusantium nam deleniti</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Officia, neque dolorum minima cupiditate incidunt suscipit. <br> Excepturi facereiure totam soluta veritatis cupiditate minima a.</p>
-                    </div>
-                    <img src="./img/slide1.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <div class="sozler2">
-                        <h2>Welcome to <br> <span>Sky</span> Book</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Quisquam officia cum recusandae ea doloribus <br> consequatur accusantium nam deleniti</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Officia, neque dolorum minima cupiditate incidunt suscipit. <br> Excepturi facereiure totam soluta veritatis cupiditate minima a.</p>
-                    </div>
-                    <img src="./img/slide2.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <div class="sozler3">
-                        <h2>Welcome to <br> <span>Sky</span> Book</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Quisquam officia cum recusandae ea doloribus <br> consequatur accusantium nam deleniti</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Officia, neque dolorum minima cupiditate incidunt suscipit. <br> Excepturi facereiure totam soluta veritatis cupiditate minima a.</p>
-                    </div>
-                    <img src="./img/slide3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+        </div>
+      </div>
+      <div class="hero__slide hero__slide--right">
+        <img src="assets/images/hero/slide-2.png" alt="">
+        <div class="container">
+          <div class="hero__content">
+            <h2 class="hero__title">Read more with <span>Sky</span> Book</h2>
+            <p class="hero__text">Hand-picked titles, fair prices and a cozy corner of the internet for every book lover.</p>
+            <a class="btn btn--primary" href="#books">Top books</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__slide hero__slide--left">
+        <img src="assets/images/hero/slide-3.jpg" alt="">
+        <div class="container">
+          <div class="hero__content">
+            <h2 class="hero__title">New arrivals at <span>Sky</span> Book</h2>
+            <p class="hero__text">Fresh fantasy, gripping mysteries and chilling horror stories are waiting on our shelves.</p>
+            <a class="btn btn--primary" href="catalog.html">See what's new</a>
+          </div>
+        </div>
+      </div>
+
+      <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Previous slide">
+        <svg viewBox="0 0 24 48" aria-hidden="true"><path d="M18 4 6 24l12 20"/></svg>
+      </button>
+      <button class="hero__arrow hero__arrow--next" type="button" aria-label="Next slide">
+        <svg viewBox="0 0 24 48" aria-hidden="true"><path d="m6 4 12 20L6 44"/></svg>
+      </button>
+      <div class="hero__dots"></div>
+    </section>
+
+    <!-- ========== Featured author ========== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Author of the month</span>
+          <h2>Best Selling Author</h2>
+        </div>
+
+        <div class="author">
+          <article class="author-card">
+            <figure class="author-card__photo">
+              <img src="assets/images/authors/jk-rowling.jpg" alt="J.K. Rowling smiling, seated outdoors" loading="lazy" width="960" height="1184">            </figure>
+
+            <div class="author-card__body">
+              <span class="author-card__role">British author</span>
+              <h3 class="author-card__name">J.K. Rowling</h3>
+              <blockquote class="author-card__quote">
+                “It matters not what someone is born, but what they grow to be.”
+              </blockquote>
+              <p class="author-card__bio">
+                The author behind the Harry Potter series — one of the best-selling book series in history.
+                Her stories of friendship, courage and magic have been loved by readers of every age
+                around the world.
+              </p>
+              <ul class="author-card__stats">
+                <li><strong>7</strong><span>Books in the series</span></li>
+                <li><strong>600M+</strong><span>Copies sold</span></li>
+                <li><strong>80+</strong><span>Languages</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <ul class="series" aria-label="Popular books by J.K. Rowling">
+            <li class="series__item">
+              <img src="assets/images/books/hp-prisoner-of-azkaban.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 3</span><h4>Prisoner of Azkaban</h4></div>
+            </li>
+            <li class="series__item">
+              <img src="assets/images/books/hp-goblet-of-fire.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 4</span><h4>Goblet of Fire</h4></div>
+            </li>
+            <li class="series__item">
+              <img src="assets/images/books/hp-order-of-the-phoenix.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 5</span><h4>Order of the Phoenix</h4></div>
+            </li>
+            <li class="series__item">
+              <img src="assets/images/books/hp-half-blood-prince.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 6</span><h4>Half-Blood Prince</h4></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Featured books ========== -->
+    <section class="section section--surface" id="books">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Our picks</span>
+          <h2>Top Interesting Books</h2>
+          <p>A selection of reader favourites — add them to your cart in one click.</p>
+        </div>
+        <div class="book-grid book-grid--three" id="featured-books"></div>
+        <div class="section-more">
+          <a class="btn btn--primary" href="catalog.html">
+            See all books <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Stats ========== -->
+    <section class="stats" aria-label="Store in numbers">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat">
+            <p class="stat__value" data-count-to="112">0</p>
+            <p class="stat__label">Authors</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value" data-count-to="745">0</p>
+            <p class="stat__label">Total Books</p>
+          </div>
+          <div class="stat">
+            <p class="stat__value" data-count-to="323">0</p>
+            <p class="stat__label">Books Sold</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Gallery ========== -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section-title">
+          <span class="eyebrow">Moments</span>
+          <h2>Gallery</h2>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="gallery__ring">
+          <span class="gallery__item" style="--i:1"><img src="assets/images/gallery/gallery-10.jpg" alt=""></span>
+          <span class="gallery__item" style="--i:2"><img src="assets/images/gallery/gallery-11.jpg" alt=""></span>
+          <span class="gallery__item" style="--i:3"><img src="assets/images/gallery/gallery-6.jpg" alt=""></span>
+          <span class="gallery__item" style="--i:4"><img src="assets/images/gallery/gallery-4.jpg" alt=""></span>
+          <span class="gallery__item" style="--i:5"><img src="assets/images/gallery/gallery-12.jpg" alt=""></span>
+          <span class="gallery__item" style="--i:6"><img src="assets/images/gallery/gallery-14.jpg" alt=""></span>
+          <span class="gallery__item" style="--i:7"><img src="assets/images/gallery/gallery-7.jpg" alt=""></span>
+          <span class="gallery__item" style="--i:8"><img src="assets/images/gallery/gallery-13.jpg" alt=""></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Contact ========== -->
+    <div class="page-banner" id="contact">
+      <div class="container">
+        <h2 class="page-banner__title">Contact Us</h2>
+        <p>Questions, suggestions or book requests — we'd love to hear from you.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact">
+          <div>
+            <h2>Tell Us Your Message</h2>
+            <form class="form" id="contact-form">
+              <div class="form__field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" placeholder="Full name" autocomplete="name" required>
               </div>
-    </section>   
-    <section id="about">
-        <div class="basliq">
-            <h2>AUTHOR BEST SELLING</h2>
-        </div>
-        <div class="esas">
-            <div class="yazar">
-                <img src="https://wpbingosite.com/wordpress/bookio/wp-content/webp-express/webp-images/uploads/2021/08/img8-2.jpg.webp">
-                <div class="yazi">
-                    <h1>J.K. <br> Rowling</h1>
-                    <p>Vestibulum porttitor iaculis gravida. Praesent vestibulum varius placerat. Cras tempor congue neque, id aliquam orci finibus sit amet. <br> Fusce at facilisis arcu. Donec aliquet nulla id turpis semper, a bibendum metus vulputate. <br> Suspendisse potenti. </p>
-                </div>
-            </div>
-            <div class="kitaplar">
-                <div class="kitap">
-                    <img src="./img/hp3.jpg">
-                    <h4>Harry Potter 4</h4>
-                    <p>Goblet of Fire </p>
-                </div>
-                <div class="kitap">
-                    <img src="./img/hp1.jpg">
-                    <h4>Harry Potter 5</h4>
-                    <p>Order of the Phoenix</p>
-                </div>
-                <div class="kitap">
-                    <img src="./img/hp2.jpg">
-                    <h4>Harry Potter 2</h4>
-                    <p>Chamber of Secrets</p>
-                </div>
-                <div class="kitap">
-                    <img src="./img/hp4.jpg">
-                    <h4>Harry Potter 6</h4>
-                    <p>Half-Blood Prince</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="sekiller">
-        <h2>TOP INTERESTING BOOKS</h2>
-        <div class="books">
-          
-        </div>
-    </section>
-    <section class="reqemler-umumi">
-        <div class="reqem-umumi"> 
-            <div class="reqem">
-                <h4>Authors</h4>
-                <p class="yazicisayi">0</p>
-            </div>
-            <div class="reqem">
-               <h4>Total Books</h4>
-               <p class="toplam">0</p> 
-            </div>
-            <div class="reqem">
-               <h4>Book sold</h4>
-               <p class="satilan">0</p>
-            </div>
-        </div>
-    </section>
-    <div class="div1"><h2>Gallery</h2></div>
-    <section id="qaleriya">
-        <div class="boxx">
-          <span style="--i:1;"><img src="./img/i10.jpg"></span>
-          <span style="--i:2;"><img src="./img/i11.jpg"></span>
-          <span style="--i:3;"><img src="./img/i6.jpg"></span>
-          <span style="--i:4;"><img src="./img/i4.jpg"></span>
-          <span style="--i:5;"><img src="./img/i12.jpg"></span>
-          <span style="--i:6;"><img src="./img/i14.jpg"></span>
-          <span style="--i:7;"><img src="./img/i7.jpg"></span>
-          <span style="--i:8;"><img src="./img/i13.jpg"></span>
-      </section>
-      <section id="contact" class="b-s">
-        <h1>Contact Us</h1>
-    </section>  
-    <section class="melumat">
-        <div class="melumatlar">
-            <h1>Tell Us Your Message</h1>
-            <div class="inputlar">
-                <p>Your Name</p>
-                <input type="text" placeholder="Full Name">
-                <p>Your Email</p>
-                <input type="text" placeholder="Email Address">
-                <p>Subject</p>
-                <input type="text" placeholder="Subject">
-                <p>Your Messagge</p>
-                <input type="text" placeholder="Messagge">
-            </div>
-            <button>SEND MESSAGGE</button>
-        </div>
-        <div class="elaveler">
-            <div class="elave">
-                <h1>Contact Us</h1>
-                <p>Lorem ipsum dolor voluptatem labore nihil delectus, unde laboriosam. Repellat modi qui ad optio suscipit omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatibus tenetur qui nisi animi, pariatur dolore blanditiis est, ullam facere non saepe id fugit temporibus. Laborum perspiciatis quae minima magnam.</p>
-                <div class="adrs">
-                    <h4>
-                        <i class="fa fa-fax"></i>Address
-                    </h4>
-                    <p>123 Main Street, Anytown, CA 12345 - USA</p>
-                </div>
-                <div class="tel">
-                    <h4>
-                        <i class="fa fa-phone"></i>Phone
-                    </h4>
-                    <p>Mobile: (08) 123 456 789</p>
-                    <p>Hotline: 1009 678 456</p>
-                </div>
-                <div class="mktb">
-                    <h4>
-                        <i class="far fa-envelope"></i>Email
-                    </h4>
-                    <p>yourmail@domain.com </p>
-                    <p>support@hastech.company</p>
-                </div>
-            </div>
+              <div class="form__field">
+                <label for="email">Your email</label>
+                <input id="email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
+              </div>
+              <div class="form__field form__field--full">
+                <label for="subject">Subject</label>
+                <input id="subject" name="subject" type="text" placeholder="Subject">
+              </div>
+              <div class="form__field form__field--full">
+                <label for="message">Your message</label>
+                <textarea id="message" name="message" placeholder="Message" required></textarea>
+              </div>
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">Send message</button>
+                <p class="form__status" role="status"></p>
+              </div>
+            </form>
+          </div>
 
+          <aside class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Visit our store, give us a call or drop us an email. Our team usually replies within one business day.</p>
+            <div class="contact-info__item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <div>
+                <h3>Address</h3>
+                <p>123 Main Street, Anytown, CA 12345 — USA</p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>Mobile: <a href="tel:08123456789">(08) 123 456 789</a></p>
+                <p>Hotline: <a href="tel:1009678456">1009 678 456</a></p>
+              </div>
+            </div>
+            <div class="contact-info__item">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <div>
+                <h3>Email</h3>
+                <p><a href="mailto:yourmail@domain.com">yourmail@domain.com</a></p>
+                <p><a href="mailto:support@hastech.company">support@hastech.company</a></p>
+              </div>
+            </div>
+          </aside>
         </div>
-    </section>
-    <section id="adress">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.8506112561163!2d-118.25180054899718!3d34.04770298051205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c64a227f82ed%3A0x8591a1380838a935!2sThe%20Last%20Bookstore!5e0!3m2!1str!2s!4v1642716496589!5m2!1str!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      </section>
-      <section class="son">
-        <div>
-            <img src="./img/logo.png">
-            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.</p>
-            <p>Address : No. 96, Jecica City, NJ 07305, New York, USA</p>
-            <p>Phone : +1 222 3333 578</p>
-            <p>Email : support@example.com</p>
-        </div>
-        <div>
-            <h3>Business Hours</h3>
-            <p>Mon - Fri: 8AM - 10PM</p>
-            <p>Sat: 9AM-8PM</p>
-            <p>Sun: Closed</p>
-        </div>
-        <div>
-            <h3>Footer Menu</h3>
-            <p>Home</p>
-            <p>About</p>
-            <p>Portfolio</p>
-            <p>Contact</p>
-            <p>Catalog</p>
-        </div>
-    </section>
-    <footer>
-        <div>
-            Copyright & Copy © 2022 <span>Sky</span>Book All Rights Reserved.
-        </div>
-        <div>
-        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/"><i class="fab fa-instagram-square"></i></a>
-        <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp-square"></i></a>
-        </div>
-    </footer>
-      
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./js/book.js"></script>
+        <div class="map">
+          <iframe
+            title="Sky Book location on Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.8506112561163!2d-118.25180054899718!3d34.04770298051205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c64a227f82ed%3A0x8591a1380838a935!2sThe%20Last%20Bookstore!5e0!3m2!1str!2s!4v1642716496589!5m2!1str!2s"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo logo--footer" aria-label="Sky Book home">
+          <img class="logo__mark" src="assets/images/brand/logo-mark.svg" alt="" width="44" height="44">
+          <span class="logo__text"><span>Sky</span>Book</span>
+        </a>
+        <p>Your friendly neighbourhood bookstore — online. Great stories, carefully picked for curious readers.</p>
+        <p>No. 96, Jecica City, NJ 07305, New York, USA</p>
+        <p><a href="tel:+12223333578">+1 222 3333 578</a> · <a href="mailto:support@example.com">support@example.com</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Business Hours</h3>
+        <ul>
+          <li>Mon – Fri: 8AM – 10PM</li>
+          <li>Sat: 9AM – 8PM</li>
+          <li>Sun: Closed</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#books">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2022</span> <span class="text-accent">Sky</span>Book. All rights reserved.</p>
+      <div class="socials">
+        <a class="icon-btn" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+        <a class="icon-btn" href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== Cart drawer ========== -->
+  <aside class="cart" id="cart" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart__header">
+      <h2>Your Cart</h2>
+      <button class="icon-btn" type="button" data-cart-close aria-label="Close cart">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="cart__items" id="cart-items"></div>
+    <div class="cart__footer">
+      <p class="cart__total"><span>Total</span><span id="cart-total">$0.00</span></p>
+      <button class="btn btn--primary" type="button" id="cart-checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="overlay"></div>
 </body>
 </html>
