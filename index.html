@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sky Book — an online bookstore with bestsellers, classics, fantasy, mystery and horror books.">
   <title>Sky Book — Online Bookstore</title>
-  <link rel="icon" type="image/png" href="assets/images/brand/logo.png">
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/brand/apple-touch-icon.png">
+  <meta name="theme-color" content="#e5642f">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +28,8 @@
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="index.html" class="logo" aria-label="Sky Book home">
-        <img src="assets/images/brand/logo.png" alt="Sky Book" width="72" height="72">
+        <img class="logo__mark" src="assets/images/brand/logo-mark.svg" alt="" width="44" height="44">
+        <span class="logo__text"><span>Sky</span>Book</span>
       </a>
 
       <nav class="nav" id="main-nav" aria-label="Main">
@@ -92,10 +95,10 @@
       </div>
 
       <button class="hero__arrow hero__arrow--prev" type="button" aria-label="Previous slide">
-        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        <svg viewBox="0 0 24 48" aria-hidden="true"><path d="M18 4 6 24l12 20"/></svg>
       </button>
       <button class="hero__arrow hero__arrow--next" type="button" aria-label="Next slide">
-        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        <svg viewBox="0 0 24 48" aria-hidden="true"><path d="m6 4 12 20L6 44"/></svg>
       </button>
       <div class="hero__dots"></div>
     </section>
@@ -109,40 +112,47 @@
         </div>
 
         <div class="author">
-          <div class="author__profile">
-            <img class="author__photo" src="assets/images/authors/featured-author.webp" alt="Featured author portrait" loading="lazy">
-            <div>
-              <h3 class="author__name">J.K. <br>Rowling</h3>
-              <p class="author__bio">
-                The author behind the Harry Potter series — one of the best-selling book series in history.
-                Her stories of friendship, courage and magic have been translated into more than 80 languages
-                and loved by readers of every age.
-              </p>
-            </div>
-          </div>
+          <article class="author-card">
+            <figure class="author-card__photo">
+              <img src="assets/images/authors/jk-rowling.jpg" alt="J.K. Rowling smiling, seated outdoors" loading="lazy" width="960" height="1184">            </figure>
 
-          <div class="author__books">
-            <div class="mini-book">
-              <img src="assets/images/books/hp-prisoner-of-azkaban.jpg" alt="Harry Potter and the Prisoner of Azkaban cover" loading="lazy">
-              <h3>Harry Potter 3</h3>
-              <p>Prisoner of Azkaban</p>
+            <div class="author-card__body">
+              <span class="author-card__role">British author</span>
+              <h3 class="author-card__name">J.K. Rowling</h3>
+              <blockquote class="author-card__quote">
+                “It matters not what someone is born, but what they grow to be.”
+              </blockquote>
+              <p class="author-card__bio">
+                The author behind the Harry Potter series — one of the best-selling book series in history.
+                Her stories of friendship, courage and magic have been loved by readers of every age
+                around the world.
+              </p>
+              <ul class="author-card__stats">
+                <li><strong>7</strong><span>Books in the series</span></li>
+                <li><strong>600M+</strong><span>Copies sold</span></li>
+                <li><strong>80+</strong><span>Languages</span></li>
+              </ul>
             </div>
-            <div class="mini-book">
-              <img src="assets/images/books/hp-goblet-of-fire.jpg" alt="Harry Potter and the Goblet of Fire cover" loading="lazy">
-              <h3>Harry Potter 4</h3>
-              <p>Goblet of Fire</p>
-            </div>
-            <div class="mini-book">
-              <img src="assets/images/books/hp-order-of-the-phoenix.jpg" alt="Harry Potter and the Order of the Phoenix cover" loading="lazy">
-              <h3>Harry Potter 5</h3>
-              <p>Order of the Phoenix</p>
-            </div>
-            <div class="mini-book">
-              <img src="assets/images/books/hp-half-blood-prince.jpg" alt="Harry Potter and the Half-Blood Prince cover" loading="lazy">
-              <h3>Harry Potter 6</h3>
-              <p>Half-Blood Prince</p>
-            </div>
-          </div>
+          </article>
+
+          <ul class="series" aria-label="Popular books by J.K. Rowling">
+            <li class="series__item">
+              <img src="assets/images/books/hp-prisoner-of-azkaban.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 3</span><h4>Prisoner of Azkaban</h4></div>
+            </li>
+            <li class="series__item">
+              <img src="assets/images/books/hp-goblet-of-fire.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 4</span><h4>Goblet of Fire</h4></div>
+            </li>
+            <li class="series__item">
+              <img src="assets/images/books/hp-order-of-the-phoenix.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 5</span><h4>Order of the Phoenix</h4></div>
+            </li>
+            <li class="series__item">
+              <img src="assets/images/books/hp-half-blood-prince.jpg" alt="" loading="lazy">
+              <div><span>Harry Potter 6</span><h4>Half-Blood Prince</h4></div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -288,7 +298,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="logo"><img src="assets/images/brand/logo.png" alt="Sky Book" width="96" height="96" loading="lazy"></a>
+        <a href="index.html" class="logo logo--footer" aria-label="Sky Book home">
+          <img class="logo__mark" src="assets/images/brand/logo-mark.svg" alt="" width="44" height="44">
+          <span class="logo__text"><span>Sky</span>Book</span>
+        </a>
         <p>Your friendly neighbourhood bookstore — online. Great stories, carefully picked for curious readers.</p>
         <p>No. 96, Jecica City, NJ 07305, New York, USA</p>
         <p><a href="tel:+12223333578">+1 222 3333 578</a> · <a href="mailto:support@example.com">support@example.com</a></p>

@@ -222,10 +222,36 @@ button {
   height: var(--header-h);
 }
 
-.logo img {
-  width: 72px;
-  height: 72px;
-  object-fit: contain;
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__mark {
+  width: 44px;
+  height: 44px;
+  transition: transform 0.3s var(--ease);
+}
+
+.logo:hover .logo__mark {
+  transform: rotate(-8deg);
+}
+
+.logo__text {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.logo__text span {
+  margin-right: 2px;
+  font-family: var(--font-script);
+  font-size: 1.25em;
+  font-weight: 400;
+  color: var(--accent);
 }
 
 .nav__list {
@@ -290,9 +316,13 @@ button {
     --header-h: 68px;
   }
 
-  .logo img {
-    width: 58px;
-    height: 58px;
+  .logo__mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .logo__text {
+    font-size: 1.4rem;
   }
 
   .menu-toggle {
@@ -748,10 +778,8 @@ button {
   color: var(--accent);
 }
 
-.footer-col .logo img {
-  width: 96px;
-  height: 96px;
-  margin-bottom: 12px;
+.logo--footer {
+  margin-bottom: 16px;
 }
 
 .footer-bottom {

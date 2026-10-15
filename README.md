@@ -59,3 +59,9 @@ Add an object to `books` in `assets/data/books.json` and put the cover in `asset
 
 Add `"featured": true` to show it on the home page (keep 6 featured books so the rows stay full).
 `category` must be one of the `id`s in `categories`.
+
+## Credits
+
+- J.K. Rowling photo: [Daniel Ogren](https://commons.wikimedia.org/wiki/File:J._K._Rowling_2010.jpg),
+  licensed under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) (credit is shown on the page).
+- Logo and favicon: `assets/images/brand/logo-mark.svg` (the favicon is the same SVG; `apple-touch-icon.png` is a 180px export).

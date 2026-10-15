@@ -9,6 +9,9 @@
   let current = 0;
   let timer = null;
 
+  // The progress line under the active dot uses the same duration
+  slider.style.setProperty("--autoplay", `${AUTOPLAY_MS}ms`);
+
   slides.forEach((_, index) => {
     const dot = document.createElement("button");
     dot.type = "button";
@@ -25,19 +28,30 @@
       slide.classList.toggle("is-active", i === current);
       slide.setAttribute("aria-hidden", i === current ? "false" : "true");
     });
-    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === current));
+    dots.forEach((dot) => dot.classList.remove("is-active"));
+    void dotsWrap.offsetWidth; // restart the progress animation even on the same dot
+    dots[current].classList.add("is-active");
     restart();
   }
 
   function restart() {
-    clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), AUTOPLAY_MS);
+    clearTimeout(timer);
+    slider.classList.remove("is-paused");
+    timer = setTimeout(() => goTo(current + 1), AUTOPLAY_MS);
   }
 
   slider.querySelector(".hero__arrow--prev").addEventListener("click", () => goTo(current - 1));
   slider.querySelector(".hero__arrow--next").addEventListener("click", () => goTo(current + 1));
-  slider.addEventListener("mouseenter", () => clearInterval(timer));
-  slider.addEventListener("mouseleave", restart);
+
+  // Autoplay keeps running on hover; it only waits while the browser tab is hidden
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      clearTimeout(timer);
+      slider.classList.add("is-paused");
+    } else {
+      goTo(current);
+    }
+  });
 
   // Swipe support on touch screens
   let touchStartX = 0;
